@@ -15,7 +15,7 @@ public class MyStack<E> {
     }
 
     public E pop() {
-        if (delegate.isEmpty()) throw new EmptyStackException();
+        if (isEmpty()) throw new EmptyStackException();
         E e = delegate.get(delegate.size() - 1);
         delegate.remove(delegate.size() -1 );
         return e;
@@ -23,6 +23,10 @@ public class MyStack<E> {
 
     public int size() {
         return delegate.size();
+    }
+    public boolean isEmpty()
+    {
+        return delegate.size() == 0;
     }
 }
 
